@@ -11,6 +11,11 @@ import ExpandLess from 'material-ui-icons/ExpandLess';
 import ExpandMore from 'material-ui-icons/ExpandMore';
 import StarBorder from 'material-ui-icons/StarBorder';
 import Typography from 'material-ui/Typography';
+import OneIcon from 'material-ui-icons/AlarmOn';
+import TwoIcon from 'material-ui-icons/AssignmentReturn';
+import ThreeIcon from 'material-ui-icons/Build';
+import FourIcon from 'material-ui-icons/Event';
+import FiveIcon from 'material-ui-icons/Gavel';
 
 const styles = theme => ({
     root: {
@@ -23,10 +28,10 @@ const styles = theme => ({
         paddingLeft: theme.spacing.unit * 4,
     },
     navIcons: {
-        fill:'#FFFFFF',
+        fill: '#FFFFFF',
     },
-    navTitles:{
-        color:'#FFFFFF'
+    navTitles: {
+        color: '#FFFFFF'
     }
 });
 
@@ -44,7 +49,8 @@ class SidebarList extends React.Component {
             <div className={classes.root}>
                 <List
                     component="nav"
-                    subheader={<ListSubheader className={classes.navTitles} component="div">Select from options</ListSubheader>}
+                    subheader={<ListSubheader className={classes.navTitles} component="div">Select from
+                        options</ListSubheader>}
                 >
                     <ListItem button>
                         <ListItemIcon >
@@ -52,7 +58,8 @@ class SidebarList extends React.Component {
                         </ListItemIcon>
                         <ListItemText
                             inset
-                            primary={<Typography className={classes.navTitles} variant='subheading'>Posts</Typography>}/>
+                            primary={<Typography className={classes.navTitles}
+                                                 variant='subheading'>Posts</Typography>}/>
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
@@ -60,7 +67,53 @@ class SidebarList extends React.Component {
                         </ListItemIcon>
                         <ListItemText
                             inset
-                            primary={<Typography className={classes.navTitles} variant='subheading'>Contacts</Typography>}/>
+                            primary={<Typography className={classes.navTitles}
+                                                 variant='subheading'>Contacts</Typography>}/>
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <OneIcon className={classes.navIcons}/>
+                        </ListItemIcon>
+                        <ListItemText
+                            inset
+                            primary={<Typography className={classes.navTitles}
+                                                 variant='subheading'>Chats</Typography>}/>
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <TwoIcon className={classes.navIcons}/>
+                        </ListItemIcon>
+                        <ListItemText
+                            inset
+                            primary={<Typography className={classes.navTitles}
+                                                 variant='subheading'>Personal</Typography>}/>
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <ThreeIcon className={classes.navIcons}/>
+                        </ListItemIcon>
+                        <ListItemText
+                            inset
+                            primary={<Typography className={classes.navTitles}
+                                                 variant='subheading'>Mails</Typography>}/>
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <FourIcon className={classes.navIcons}/>
+                        </ListItemIcon>
+                        <ListItemText
+                            inset
+                            primary={<Typography className={classes.navTitles}
+                                                 variant='subheading'>Things</Typography>}/>
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <FiveIcon className={classes.navIcons}/>
+                        </ListItemIcon>
+                        <ListItemText
+                            inset
+                            primary={<Typography className={classes.navTitles}
+                                                 variant='subheading'>Logout</Typography>}/>
                     </ListItem>
                 </List>
             </div>

@@ -15,7 +15,7 @@ const styles = theme => ({
     root: theme.mixins.gutters({
         paddingTop: 16,
         paddingBottom: 30,
-        marginTop: theme.spacing.unit * 3,
+        // marginTop: theme.spacing.unit * 3,
     }),
     avatar: {
         margin: '30% 10px 10px 10px'

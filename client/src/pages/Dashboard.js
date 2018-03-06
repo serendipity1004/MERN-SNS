@@ -11,6 +11,12 @@ import Hidden from 'material-ui/Hidden';
 import Divider from 'material-ui/Divider';
 import MenuIcon from 'material-ui-icons/Menu';
 import Grid from 'material-ui/Grid';
+import FavouriteIcon from 'material-ui-icons/Favorite';
+import NewPostIcon from 'material-ui-icons/Class';
+import ViewPostsIcon from 'material-ui-icons/ChromeReaderMode';
+import AccountCircle from 'material-ui-icons/AccountCircle';
+import NotificationNone from 'material-ui-icons/NotificationsNone';
+import ShareIcon from 'material-ui-icons/Share';
 
 /**
  * Local Components
@@ -71,6 +77,26 @@ const styles = theme => ({
     },
     paddingBottom: {
         paddingBottom: '20px !important'
+    },
+    textVertMid: {
+        display: 'flex',
+        alignItems: 'center',
+        margin: '10px 0 10px 0',
+        textShadow: '2px 2px #FFFFFF'
+    },
+    iconRedFill: {
+        fill: '#3F51B5',
+        textShadow: '10px 10px 5px grey'
+    },
+    appbarIcons: {
+        margin:'0 10px 0 10px'
+    },
+    appBarFlex: {
+        display: 'flex',
+        justifyContent: 'space-between'
+    },
+    appBarIconsContainer:{
+        paddingRight:50
     }
 });
 
@@ -95,8 +121,8 @@ class DashboardPage extends React.Component {
 
         return (
             <div className={classes.root}>
-                <AppBar className={classes.appBar}>
-                    <Toolbar>
+                <AppBar position="static" className={classes.appBar}>
+                    <Toolbar className={classes.appBarFlex}>
                         <IconButton
                             color="inherit"
                             aria-label="open drawer"
@@ -108,6 +134,16 @@ class DashboardPage extends React.Component {
                         <Typography variant="title" color="inherit" noWrap>
                             Posts
                         </Typography>
+                        <div className={classes.appBarIconsContainer}>
+                            <IconButton
+                                aria-owns="menu-appbar"
+                                color="inherit"
+                            >
+                                <ShareIcon className={classes.appbarIcons}/>
+                                <NotificationNone className={classes.appbarIcons}/>
+                                <AccountCircle className={classes.appbarIcons}/>
+                            </IconButton>
+                        </div>
                     </Toolbar>
                 </AppBar>
                 <Hidden mdUp>
@@ -141,31 +177,55 @@ class DashboardPage extends React.Component {
                     <div className={classes.toolbar}/>
                     <Grid container spacing={24}>
                         <Grid className={classes.scrollable} item md={8}>
-                            <Grid container spacing={24}>
+                            <Grid container spacing={0}>
+                                <Grid item md={12}>
+                                    <Typography className={classes.textVertMid} variant="title">
+                                        <FavouriteIcon className={classes.iconRedFill}/> Choose from Popular Tags
+                                    </Typography>
+                                </Grid>
                                 <Grid item md={12}>
                                     <TagsList/>
                                 </Grid>
                                 <Grid item md={12}>
+                                    <Typography className={classes.textVertMid} variant="title">
+                                        <NewPostIcon className={classes.iconRedFill}/> Write a New Post
+                                    </Typography>
+                                </Grid>
+                                <Grid item md={12}>
                                     <NewPostField/>
                                 </Grid>
-                                <Grid item md={6}>
-                                    <PostCard url="https://farm6.staticflickr.com/5131/5391445158_a502135d37_z.jpg"/>
+                                <Grid item md={12}>
+                                    <Typography className={classes.textVertMid} variant="title">
+                                        <ViewPostsIcon className={classes.iconRedFill}/> View Posts
+                                    </Typography>
                                 </Grid>
-                                <Grid item md={6}>
-                                    <PostCard url="https://farm8.staticflickr.com/7213/7163283745_421bba225b_z.jpg"/>
+                                <Grid container spacing={24}>
+                                    <Grid item md={6}>
+                                        <PostCard
+                                            url="https://farm6.staticflickr.com/5131/5391445158_a502135d37_z.jpg"/>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <PostCard
+                                            url="https://farm8.staticflickr.com/7213/7163283745_421bba225b_z.jpg"/>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <PostCard
+                                            url="https://farm9.staticflickr.com/8740/16695514860_7265af2df8_z.jpg"/>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <PostCard
+                                            url="https://farm7.staticflickr.com/6202/6130427835_2eb09772c6_z.jpg"/>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <PostCard
+                                            url="https://farm9.staticflickr.com/8645/30258570285_ac3f31a116_z.jpg"/>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <PostCard
+                                            url="https://farm6.staticflickr.com/5628/20137790814_35f3c87ed2_z.jpg"/>
+                                    </Grid>
                                 </Grid>
-                                <Grid item md={6}>
-                                    <PostCard url="https://farm9.staticflickr.com/8740/16695514860_7265af2df8_z.jpg"/>
-                                </Grid>
-                                <Grid item md={6}>
-                                    <PostCard url="https://farm7.staticflickr.com/6202/6130427835_2eb09772c6_z.jpg"/>
-                                </Grid>
-                                <Grid item md={6}>
-                                    <PostCard url="https://farm9.staticflickr.com/8645/30258570285_ac3f31a116_z.jpg"/>
-                                </Grid>
-                                <Grid item md={6}>
-                                    <PostCard url="https://farm6.staticflickr.com/5628/20137790814_35f3c87ed2_z.jpg"/>
-                                </Grid>
+
                             </Grid>
                         </Grid>
                         <Grid item md={4}>

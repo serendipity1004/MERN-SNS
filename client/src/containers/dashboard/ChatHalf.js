@@ -41,11 +41,12 @@ const styles = theme => ({
 
 function ChatHalf(props) {
     const {classes} = props;
+
     return (
         <div>
             <Paper className={classes.root} elevation={4}>
-                <Typography className={classes.chatTitle} variant="display2" gutterBottom={10}>
-                    #Your Chat
+                <Typography className={classes.chatTitle} variant="display1" gutterBottom={10}>
+                    #Chat
                 </Typography>
                 <Divider/>
                 <div className={classes.chatParent}>
